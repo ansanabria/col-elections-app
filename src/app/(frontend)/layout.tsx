@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import { DM_Sans, Instrument_Serif } from 'next/font/google'
 import React from 'react'
 import './globals.css'
 import { SiteFooter } from '@/components/site/SiteFooter'
@@ -10,18 +11,23 @@ export const metadata = {
   title: 'Elecciones Colombia',
 }
 
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  variable: '--font-instrument-serif',
+  weight: '400',
+})
+
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
     <html lang="es">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Instrument+Serif&display=swap"
-          rel="stylesheet"
-        />
         {process.env.NODE_ENV === 'development' && (
           <Script
             src="//unpkg.com/react-grab/dist/index.global.js"
@@ -30,7 +36,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           />
         )}
       </head>
-      <body>
+      <body className={`${dmSans.variable} ${instrumentSerif.variable}`}>
         <main className="mx-auto min-h-screen max-w-7xl px-6 py-6 md:px-8 lg:px-12">
           <SiteHeader />
           {children}

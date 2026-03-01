@@ -31,7 +31,7 @@ export function CompareInteractiveShell({
   const [isPending, setIsPending] = useState(false)
   const [optimisticSelectedA, setOptimisticSelectedA] = useState(selectedA ?? '')
   const [optimisticSelectedB, setOptimisticSelectedB] = useState(selectedB ?? '')
-  const [optimisticSelectedC, setOptimisticSelectedC] = useState(selectedC ?? '')
+  const [_optimisticSelectedC, setOptimisticSelectedC] = useState(selectedC ?? '')
 
   useEffect(() => {
     setOptimisticSelectedA(selectedA ?? '')
