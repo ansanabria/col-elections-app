@@ -22,24 +22,24 @@ All colors are defined as Shadcn theme tokens in `src/app/(frontend)/styles.css`
 
 ### Light Theme (default)
 
-| Token | Tailwind class | Role |
-|---|---|---|
-| `--background` | `bg-background` | Page body — warm off-white |
-| `--foreground` | `text-foreground` | Primary body text |
-| `--card` | `bg-card` | Card/panel surfaces |
-| `--card-foreground` | `text-card-foreground` | Text on cards |
-| `--primary` | `bg-primary` / `text-primary` | Strong green — CTAs, active states, links |
-| `--primary-foreground` | `text-primary-foreground` | Text on green backgrounds |
-| `--secondary` | `bg-secondary` | Subtle warm surface for secondary areas |
-| `--secondary-foreground` | `text-secondary-foreground` | Text on secondary surfaces |
-| `--muted` | `bg-muted` | Muted backgrounds (tags, badges) |
-| `--muted-foreground` | `text-muted-foreground` | De-emphasized text (dates, labels, metadata) |
-| `--accent` | `bg-accent` | Hover/active state surfaces |
-| `--accent-foreground` | `text-accent-foreground` | Text on accent surfaces |
-| `--destructive` | `bg-destructive` | Errors, warnings |
-| `--border` | `border-border` | Subtle warm borders |
-| `--input` | `border-input` | Input field borders |
-| `--ring` | `ring-ring` | Focus rings |
+| Token                    | Tailwind class                | Role                                         |
+| ------------------------ | ----------------------------- | -------------------------------------------- |
+| `--background`           | `bg-background`               | Page body — warm off-white                   |
+| `--foreground`           | `text-foreground`             | Primary body text                            |
+| `--card`                 | `bg-card`                     | Card/panel surfaces                          |
+| `--card-foreground`      | `text-card-foreground`        | Text on cards                                |
+| `--primary`              | `bg-primary` / `text-primary` | Strong green — CTAs, active states, links    |
+| `--primary-foreground`   | `text-primary-foreground`     | Text on green backgrounds                    |
+| `--secondary`            | `bg-secondary`                | Subtle warm surface for secondary areas      |
+| `--secondary-foreground` | `text-secondary-foreground`   | Text on secondary surfaces                   |
+| `--muted`                | `bg-muted`                    | Muted backgrounds (tags, badges)             |
+| `--muted-foreground`     | `text-muted-foreground`       | De-emphasized text (dates, labels, metadata) |
+| `--accent`               | `bg-accent`                   | Hover/active state surfaces                  |
+| `--accent-foreground`    | `text-accent-foreground`      | Text on accent surfaces                      |
+| `--destructive`          | `bg-destructive`              | Errors, warnings                             |
+| `--border`               | `border-border`               | Subtle warm borders                          |
+| `--input`                | `border-input`                | Input field borders                          |
+| `--ring`                 | `ring-ring`                   | Focus rings                                  |
 
 ### Dark Theme
 
@@ -58,10 +58,10 @@ A full dark mode is defined in the theme. It is not used on the public site in M
 
 ### Font stack
 
-| Role | Font | Tailwind class | Weight(s) |
-|---|---|---|---|
-| **Display / headings** | `Instrument Serif` | `font-serif` | 400 (regular) |
-| **Body / UI** | `DM Sans` | `font-sans` | 400, 500, 700 |
+| Role                   | Font          | Tailwind class | Weight(s)                |
+| ---------------------- | ------------- | -------------- | ------------------------ |
+| **Display / headings** | `EB Garamond` | `font-serif`   | 400, 500, 700 (+ italic) |
+| **Body / UI**          | `DM Sans`     | `font-sans`    | 400, 500, 700            |
 
 Both are loaded from Google Fonts in the frontend layout. `font-sans` is the default body font (set in `@layer base`). Headings (`h1`, `h2`) automatically use `font-serif` via the base layer.
 
@@ -69,18 +69,18 @@ Both are loaded from Google Fonts in the frontend layout. `font-sans` is the def
 
 Use Tailwind's built-in sizes. Preferred mappings:
 
-| Element | Tailwind classes | Font |
-|---|---|---|
-| Page title (h1) | `text-3xl` or `text-5xl` | Instrument Serif (auto via base) |
-| Section heading (h2) | `text-xl` or `text-3xl` | Instrument Serif (auto via base) |
-| Card title (h3) | `text-lg font-bold font-sans` | DM Sans |
-| Body text | `text-base` | DM Sans (default) |
-| Small / metadata | `text-sm` | DM Sans |
-| Category label | `text-xs font-medium uppercase tracking-widest text-muted-foreground` | DM Sans |
+| Element              | Tailwind classes                                                      | Font                             |
+| -------------------- | --------------------------------------------------------------------- | -------------------------------- |
+| Page title (h1)      | `text-3xl` or `text-5xl`                                              | Instrument Serif (auto via base) |
+| Section heading (h2) | `text-xl` or `text-3xl`                                               | Instrument Serif (auto via base) |
+| Card title (h3)      | `text-lg font-bold font-sans`                                         | DM Sans                          |
+| Body text            | `text-base`                                                           | DM Sans (default)                |
+| Small / metadata     | `text-sm`                                                             | DM Sans                          |
+| Category label       | `text-xs font-medium uppercase tracking-widest text-muted-foreground` | DM Sans                          |
 
 ### Typography rules
 
-- **Headings are serif.** All `h1` and `h2` elements use `Instrument Serif` automatically via the CSS base layer. No need to add `font-serif` manually.
+- **Headings are serif.** All `h1` and `h2` elements use `EB Garamond` automatically via the CSS base layer. No need to add `font-serif` manually.
 - **Everything else is sans-serif.** Body copy, labels, buttons, navigation — all `DM Sans` (the default `font-sans`).
 - **Category labels** are uppercase `text-xs font-medium tracking-widest text-muted-foreground`.
 - **Line heights** are generous: headings at `leading-tight` (1.25), body at `leading-relaxed` (1.625).
@@ -183,7 +183,7 @@ These are explicitly banned:
 
 - **No hardcoded colors.** Always use theme tokens (`bg-background`, `text-primary`, etc.). Never write `bg-[#xxx]` or inline `color:` styles.
 - **No custom CSS for components.** All component styling is Tailwind utilities only. The `styles.css` file is reserved for the Shadcn theme definition.
-- **No Inter, Roboto, or Arial as primary fonts.** The type stack is `Instrument Serif` + `DM Sans`.
+- **No Inter, Roboto, or Arial as primary fonts.** The type stack is `EB Garamond` + `DM Sans`.
 - **No heavy box-shadows.** One `shadow-sm` on hover is the max for cards.
 - **No candidate-specific colors.** All candidates get identical visual treatment.
 - **No emoji in UI** (except the flag in the brand). The tone is journalistic.

@@ -1,5 +1,5 @@
 import Script from 'next/script'
-import { DM_Sans, Instrument_Serif } from 'next/font/google'
+import { DM_Sans, EB_Garamond } from 'next/font/google'
 import React from 'react'
 import './globals.css'
 import { SiteFooter } from '@/components/site/SiteFooter'
@@ -16,17 +16,19 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans',
 })
 
-const instrumentSerif = Instrument_Serif({
+const ebGaramond = EB_Garamond({
   subsets: ['latin'],
-  variable: '--font-instrument-serif',
-  weight: '400',
+  variable: '--font-eb-garamond',
+  weight: ['400', '500', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
 })
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="es">
+    <html lang="es" className={`${dmSans.variable} ${ebGaramond.variable}`}>
       <head>
         {process.env.NODE_ENV === 'development' && (
           <Script
@@ -36,7 +38,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           />
         )}
       </head>
-      <body className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+      <body>
         <main className="mx-auto min-h-screen max-w-7xl px-6 py-6 md:px-8 lg:px-12">
           <SiteHeader />
           {children}

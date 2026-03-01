@@ -8,12 +8,12 @@ This file is the single source of context for any agent working on this project.
 
 The app is a **Next.js** (App Router) frontend backed by **Payload CMS** as both the content API and admin UI. Everything is written in **TypeScript**.
 
-| Layer | Technology |
-|---|---|
-| Frontend | Next.js (App Router) + React + TypeScript |
-| CMS / API | Payload CMS — local API + admin UI |
-| Testing | Vitest (unit/integration) · Playwright (e2e) |
-| Tooling | ESLint · Docker · generated types at `src/payload-types.ts` |
+| Layer     | Technology                                                  |
+| --------- | ----------------------------------------------------------- |
+| Frontend  | Next.js (App Router) + React + TypeScript                   |
+| CMS / API | Payload CMS — local API + admin UI                          |
+| Testing   | Vitest (unit/integration) · Playwright (e2e)                |
+| Tooling   | ESLint · Docker · generated types at `src/payload-types.ts` |
 
 **Where things live:**
 
@@ -54,25 +54,26 @@ The full design system lives at `.agents/skills/frontend-design/DESIGN_SYSTEM.md
 
 **Colors:** Defined as Shadcn theme tokens in `src/app/(frontend)/styles.css`. Light and dark themes are both available. Always use Tailwind theme classes (`bg-background`, `text-primary`, `border-border`, etc.) — never hardcode color values.
 
-| Token | Role |
-|---|---|
-| `--background` | Warm off-white page body |
-| `--foreground` | Primary body text |
-| `--primary` | Strong green — links, buttons, focus rings |
-| `--card` | Elevated panel surfaces |
-| `--muted-foreground` | De-emphasized text (dates, labels) |
-| `--border` | Thin warm borders |
+| Token                | Role                                       |
+| -------------------- | ------------------------------------------ |
+| `--background`       | Warm off-white page body                   |
+| `--foreground`       | Primary body text                          |
+| `--primary`          | Strong green — links, buttons, focus rings |
+| `--card`             | Elevated panel surfaces                    |
+| `--muted-foreground` | De-emphasized text (dates, labels)         |
+| `--border`           | Thin warm borders                          |
 
 **Typography:**
 
-| Role | Font | Tailwind class |
-|---|---|---|
-| Display / headings (h1, h2) | `Instrument Serif` | `font-serif` (auto via base layer) |
-| Body / UI / everything else | `DM Sans` | `font-sans` (default) |
+| Role                        | Font          | Tailwind class                     |
+| --------------------------- | ------------- | ---------------------------------- |
+| Display / headings (h1, h2) | `EB Garamond` | `font-serif` (auto via base layer) |
+| Body / UI / everything else | `DM Sans`     | `font-sans` (default)              |
 
 Both are loaded from Google Fonts in the frontend layout. `h1` and `h2` automatically get `font-serif` via the CSS base layer — no manual class needed.
 
 **Key rules:**
+
 - **All component styling is Tailwind utility classes only.** `styles.css` only defines the Shadcn theme — no custom CSS classes for components.
 - No hardcoded colors — always use theme tokens.
 - Candidate cards must be uniform — no visual favoritism.
