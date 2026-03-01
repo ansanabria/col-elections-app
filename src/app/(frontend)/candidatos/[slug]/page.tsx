@@ -50,7 +50,8 @@ export default async function CandidatePage({ params }: CandidatePageProps) {
               alt={`Foto de ${candidate.name}`}
               src={imageUrl}
               fill
-              sizes="(max-width: 768px) 100vw, 30vw"
+              sizes="(max-width: 767px) 100vw, 30vw"
+              fetchPriority="high"
               className="block object-cover"
             />
           ) : (

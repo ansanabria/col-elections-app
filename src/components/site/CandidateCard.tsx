@@ -19,7 +19,7 @@ export function CandidateCard({ href, imageUrl, name, party }: CandidateCardProp
           alt={`Foto de ${name}`}
           src={imageUrl}
           fill
-          sizes="(max-width: 768px) 100vw, 25vw"
+          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
           className="object-cover"
         />
       ) : (
