@@ -4,6 +4,8 @@ import { CandidateCard } from '@/components/site/CandidateCard'
 import { IntroPanel } from '@/components/site/IntroPanel'
 import { getCandidateImageUrl, getCandidatesForDirectory } from '@/lib/candidates'
 
+export const revalidate = 300 // revalidate every 5 minutes
+
 export default async function HomePage() {
   const candidates = await getCandidatesForDirectory()
 
