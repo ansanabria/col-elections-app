@@ -20,7 +20,7 @@ export function CandidateCard({ href, imageUrl, name, party }: CandidateCardProp
           src={imageUrl}
           fill
           sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-          className="object-cover object-center"
+          className="object-cover"
         />
       ) : (
         <div className="h-full w-full bg-secondary" aria-hidden />
