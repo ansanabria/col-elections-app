@@ -4,6 +4,7 @@ import React from 'react'
 import './globals.css'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
   description:
@@ -44,6 +45,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           {children}
           <SiteFooter />
         </main>
+        <Analytics />
       </body>
     </html>
   )
