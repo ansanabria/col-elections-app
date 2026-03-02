@@ -366,6 +366,22 @@ export interface Candidate {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Videos de entrevistas al candidato en YouTube. Cada entrada se muestra en la pagina de entrevistas del perfil. Arrastra las filas para reordenar.
+   */
+  interviewItems?:
+    | {
+        title: string;
+        /**
+         * URL completa del video (ej: https://www.youtube.com/watch?v=XXXX o https://youtu.be/XXXX)
+         */
+        youtubeUrl: string;
+        description?: string | null;
+        publishedDate?: string | null;
+        channel?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   summaryTrajectory: string;
   summaryProposals: string;
   summaryControversies: string;
@@ -602,6 +618,16 @@ export interface CandidatesSelect<T extends boolean = true> {
         publishedAt?: T;
         url?: T;
         tier?: T;
+        id?: T;
+      };
+  interviewItems?:
+    | T
+    | {
+        title?: T;
+        youtubeUrl?: T;
+        description?: T;
+        publishedDate?: T;
+        channel?: T;
         id?: T;
       };
   summaryTrajectory?: T;

@@ -67,8 +67,12 @@ export default async function CandidatePage({ params }: CandidatePageProps) {
             {candidate.currentOffice ?? 'Cargo no disponible'}
           </p>
 
-          <Button asChild variant="outline" className="my-3 w-full">
+          <Button asChild variant="outline" className="mt-3 w-full">
             <Link href={`/comparar?a=${candidate.slug}`}>Comparar con otro candidato</Link>
+          </Button>
+
+          <Button asChild variant="outline" className="mb-3 mt-2 w-full">
+            <Link href={`/candidatos/${candidate.slug}/entrevistas`}>Entrevistas</Link>
           </Button>
 
           <p className="text-sm text-muted-foreground">

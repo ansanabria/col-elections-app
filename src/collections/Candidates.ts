@@ -385,6 +385,48 @@ export const Candidates: CollectionConfig = {
               label: 'Patrimonio, financiacion y campana',
             },
             sourcesField,
+            {
+              name: 'interviewItems',
+              type: 'array',
+              label: 'Entrevistas (videos de YouTube)',
+              admin: {
+                description:
+                  'Videos de entrevistas al candidato en YouTube. Cada entrada se muestra en la pagina de entrevistas del perfil. Arrastra las filas para reordenar.',
+              },
+              fields: [
+                {
+                  name: 'title',
+                  type: 'text',
+                  required: true,
+                  label: 'Titulo de la entrevista',
+                },
+                {
+                  name: 'youtubeUrl',
+                  type: 'text',
+                  required: true,
+                  label: 'URL de YouTube',
+                  admin: {
+                    description:
+                      'URL completa del video (ej: https://www.youtube.com/watch?v=XXXX o https://youtu.be/XXXX)',
+                  },
+                },
+                {
+                  name: 'description',
+                  type: 'textarea',
+                  label: 'Descripcion breve (opcional)',
+                },
+                {
+                  name: 'publishedDate',
+                  type: 'text',
+                  label: 'Fecha de publicacion (ej: 33 de diciembre del 2026)',
+                },
+                {
+                  name: 'channel',
+                  type: 'text',
+                  label: 'Canal o medio (ej: La Silla Vacia, Cambio)',
+                },
+              ],
+            },
           ],
         },
         {
