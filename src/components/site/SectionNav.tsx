@@ -8,7 +8,7 @@ type SectionNavProps = {
 
 export function SectionNav({ sections }: SectionNavProps) {
   return (
-    <div className="sticky top-2 z-5 mb-5 rounded-lg border border-border bg-background p-1">
+    <div className="sticky top-6 z-5 mb-5 rounded-lg border border-border bg-background p-1">
       <nav aria-label="Secciones del perfil" className="hidden w-full md:flex">
         {sections.map((section) => (
           <a
