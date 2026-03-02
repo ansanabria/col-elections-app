@@ -11,6 +11,7 @@ import { SectionNav } from '@/components/site/SectionNav'
 import { SourcesAccordion } from '@/components/site/SourcesAccordion'
 import { TrajectoryTimeline } from '@/components/site/TrajectoryTimeline'
 import { SocialLinksPanel } from '@/components/site/SocialLinksPanel'
+import { StickySidebar } from '@/components/site/StickySidebar'
 import { Button } from '@/components/ui/button'
 import {
   formatDate,
@@ -43,7 +44,7 @@ export default async function CandidatePage({ params }: CandidatePageProps) {
 
   return (
     <section className="grid gap-8 md:grid-cols-[minmax(260px,30%)_1fr]">
-      <aside className="sticky bottom-6 h-max overflow-hidden rounded-lg border border-border bg-card md:self-end">
+      <StickySidebar>
         <div className="relative aspect-[3/4] bg-secondary">
           {imageUrl ? (
             <Image
@@ -85,7 +86,7 @@ export default async function CandidatePage({ params }: CandidatePageProps) {
             <SocialLinksPanel links={socialLinks} />
           </div>
         )}
-      </aside>
+      </StickySidebar>
 
       <div className="min-w-0">
         <SectionNav sections={SECTION_CONFIG} />
